@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/robin/Downloads/index%20(6).html -->
+<html lang="no"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madeleine &amp; Sahil — 29. mai 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index (6)_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #2b3b2f;
+    --green-mid: #4a5d47;
+    --green-mist: #cfd9c9;
+    --cream: #f6f2e9;
+    --cream-warm: #efe7d6;
+    --gold: #a9884f;
+    --gold-light: #cfb37e;
+    --ink: #262420;
+    --line: rgba(43, 59, 47, 0.18);
+    --max-width: 780px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--green-deep);
+    letter-spacing: 0.02em;
+  }
+
+  a { color: var(--green-deep); }
+
+  .section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 96px 28px;
+  }
+
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  /* ---------- Lock screen ---------- */
+  .lock-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+  }
+  .lock-screen.unlocked { display: none; }
+
+  .lock-box {
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+  }
+  .lock-monogram {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 20px;
+  }
+  .lock-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--green-deep);
+    margin: 0 0 10px;
+  }
+  .lock-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--green-mid);
+    margin: 0 0 26px;
+  }
+  .lock-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .lock-form input {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 13px 14px;
+    letter-spacing: 0.08em;
+  }
+  .lock-form input:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .lock-form button {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--green-deep);
+    border: none;
+    padding: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+  }
+  .lock-form button:hover { background: var(--green-mid); }
+  .lock-error {
+    min-height: 18px;
+    font-size: 13px;
+    color: #9a4b3f;
+    margin: 16px 0 0;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(169,136,79,0.10), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+    overflow: hidden;
+  }
+
+  .hero-fern {
+    position: absolute;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .hero-fern.left { left: -40px; top: 8%; width: 180px; transform: rotate(-8deg); }
+  .hero-fern.right { right: -40px; bottom: 6%; width: 200px; transform: rotate(184deg); }
+
+  .monogram {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 1.1s ease forwards;
+  }
+
+  .hero .eyebrow {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.15s;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    margin: 0 0 22px;
+    line-height: 1.08;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.3s;
+  }
+
+  .hero .amp {
+    display: block;
+    font-size: 0.5em;
+    color: var(--gold);
+    margin: 6px 0;
+    font-style: normal;
+  }
+
+  .hero-date {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.45s;
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 56px;
+    background: var(--line);
+    margin: 34px auto 0;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.6s, growLine 1.4s ease forwards 0.6s;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes growLine {
+    from { height: 0; }
+    to { height: 56px; }
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ---------- Story ---------- */
+  .story {
+    text-align: center;
+  }
+  .story h2 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-style: italic;
+    margin: 0 0 30px;
+  }
+  .story p {
+    color: var(--green-mid);
+    font-weight: 300;
+  }
+  .story-mark {
+    width: 34px;
+    height: 34px;
+    margin: 36px auto 0;
+    opacity: 0.7;
+  }
+
+  /* ---------- Details ---------- */
+  .details {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 100px 28px;
+  }
+  .details-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  .details .eyebrow { color: var(--gold-light); }
+  .details h2 {
+    color: var(--cream);
+    text-align: center;
+    font-style: italic;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    margin: 0 0 60px;
+  }
+
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 640px) {
+    .venue-grid { grid-template-columns: 1fr; gap: 56px; }
+  }
+
+  .venue {
+    text-align: center;
+    padding: 0 8px;
+  }
+  .venue-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px;
+    opacity: 0.85;
+  }
+  .venue h3 {
+    color: var(--gold-light);
+    font-size: 1.5rem;
+    font-style: italic;
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+  .venue .time {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(246,242,233,0.6);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .venue .place {
+    font-weight: 400;
+    margin: 0 0 4px;
+  }
+  .venue .addr {
+    font-size: 14px;
+    color: rgba(246,242,233,0.7);
+    margin: 0 0 14px;
+  }
+  .venue a.map-link {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid rgba(207,179,126,0.4);
+    padding-bottom: 2px;
+  }
+  .venue a.map-link:hover { border-color: var(--gold-light); }
+
+  .venue-divider {
+    display: none;
+  }
+  @media (min-width: 641px) {
+    .venue-grid { position: relative; }
+    .venue:first-child::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      left: 50%;
+      width: 1px;
+      background: rgba(246,242,233,0.15);
+    }
+  }
+
+  /* ---------- Practical ---------- */
+  .practical {
+    text-align: center;
+  }
+  .practical h2 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-style: italic;
+    margin: 0 0 30px;
+  }
+  .practical-card {
+    background: var(--cream-warm);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 38px 34px;
+    margin-top: 12px;
+  }
+  .practical-card p {
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+  .practical-card p:last-child { margin-bottom: 0; }
+  .practical-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 16px;
+    color: var(--gold);
+  }
+
+  /* ---------- RSVP ---------- */
+  .rsvp {
+    background: var(--cream-warm);
+  }
+  .rsvp h2 {
+    text-align: center;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-style: italic;
+    margin: 0 0 8px;
+  }
+  .rsvp-sub {
+    text-align: center;
+    color: var(--green-mid);
+    margin: 0 0 50px;
+    font-size: 15px;
+  }
+  .rsvp-sub strong { color: var(--green-deep); font-weight: 500; }
+
+  form.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .field label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 9px;
+  }
+
+  .field input[type="text"],
+  .field input[type="number"],
+  .field input[type="email"],
+  .field textarea {
+    width: 100%;
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 13px 14px;
+    outline-offset: 2px;
+  }
+  .field input:focus,
+  .field textarea:focus,
+  .radio-pill input:focus-visible + span {
+    outline: 2px solid var(--gold);
+  }
+  .field textarea { resize: vertical; min-height: 90px; }
+
+  .radio-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .radio-pill {
+    position: relative;
+  }
+  .radio-pill input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .radio-pill span {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--green-mid);
+    background: var(--cream);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .radio-pill input:checked + span {
+    background: var(--green-deep);
+    border-color: var(--green-deep);
+    color: var(--cream);
+  }
+
+  .checkbox-pill {
+    position: relative;
+    display: inline-block;
+  }
+  .checkbox-pill input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .checkbox-pill span {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--green-mid);
+    background: var(--cream);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .checkbox-pill input:checked + span {
+    background: var(--green-deep);
+    border-color: var(--green-deep);
+    color: var(--cream);
+  }
+  .checkbox-pill input:focus-visible + span {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .rsvp-thankyou {
+    display: none;
+    text-align: center;
+    padding: 40px 12px 10px;
+  }
+  .rsvp-thankyou.visible { display: block; }
+  .thankyou-mark {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 26px;
+  }
+  .rsvp-thankyou h3 {
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    font-style: italic;
+    margin: 0 0 16px;
+  }
+  .rsvp-thankyou p {
+    color: var(--green-mid);
+    font-size: 17px;
+    margin: 0;
+  }
+
+  .submit-row {
+    margin-top: 12px;
+    text-align: center;
+  }
+  button.submit-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--green-deep);
+    border: none;
+    padding: 16px 46px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.15s ease;
+  }
+  button.submit-btn:hover { background: var(--green-mid); }
+  button.submit-btn:active { transform: scale(0.98); }
+  button.submit-btn:disabled { opacity: 0.6; cursor: default; }
+
+  .form-msg {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 6px;
+    min-height: 20px;
+    color: var(--green-deep);
+  }
+  .form-msg.error { color: #9a4b3f; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 60px 24px 50px;
+  }
+  footer .monogram-small {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 18px;
+    opacity: 0.6;
+  }
+  footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--green-mid);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared monogram artwork, referenced via <use> in the hero and footer -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="monogramMark" viewBox="0 0 1254 1254">
+    <path d="M964.9,754.9c-18-19.7-37.7-36.3-58.1-53.6l-53.6-45.5c-15.1-12.8-27.9-26.8-39-43.2-15.8-23.1-22.5-50.1-18.4-78,1.1-8,1.7-16.1,4.9-23.4,9.1-20.9,26.2-36,46.7-45.7,34-16,75.1-17.9,108.9-.2,16.7,8.7,29.9,21.9,37.6,38.9,6,13.2,7.6,27.3,3.2,40.9-4.7,14.4-16.7,24-32,24.9-6.2.4-12.9,1.3-17.2,6.3-7.5,8.8-4.1,21.9,5.9,27.5,21.5,11.9,46.9-1.9,58.8-22.7,19.9-34.9,12.1-79.2-17.9-105.9-14.1-12.6-30.5-21-48.8-25.8-48.7-12.9-100,.3-140.9,32.1,0,0-5.8,4.4-13.2,11.7,3.8-59.4,16.7-123.7,20.1-147,5-30.9,11.8-59.3,19.2-88.2,4.5-17.5,10.4-33.5,17-50,21.6-48.5,51.3-69.5,105.2-65.8.6,0,1.9-1.9,1.5-2.3-.3-.3-.7-1.2-1.6-1.3-41.6-9-85.3,5.6-116.9,33.2-23.6,20.6-41.4,46.2-58.5,72.4-24.2,37-47,74.5-68.6,113.2l-112.4,200.7c-6.9-58.9-15.5-114.7-28.6-170.8-5.4-22.2-10.5-43.1-17.4-64.7-20.8-65.9-57.1-143.6-127.2-168.2-61.2-21.5-132.7-1.2-165.2,57-18.4,33-20.1,79.8,8.9,106,16.8,15.2,39.8,19.4,61.4,13.6,1.2-.3,1.5-1.5,1.2-2.1-.2-.6-1.4-1.4-2.4-1.2-20.5,2.9-40.1-4.1-53.5-20.2-13.9-16.8-18.9-38.6-16-60.4,5.7-42.6,37.7-75.3,78.9-85.2,52.7-12.6,94.4,14.3,120.9,58.6l-29.7,111.8-45,156.9c-9.9,34.3-21.2,67.3-35,100.1-13.3,31.7-35.5,73.3-66.2,90.1-30.8,16.8-52.9-4.9-51.7,1.3,1.4,7.7,49.9,33.2,88.6-2.6,24.8-22.9,39.4-56.2,50.6-87.9,8-22.7,14.8-44.8,20.8-68.2l42.4-164.5,31.4-126.2c16.8,29.2,28.4,58.3,39.1,88.7,13.2,39.7,23.7,79.3,32.8,120.2,13.8,62.6,24,125.1,32.2,188.4.2,1.7,1.2,2.7,2.2,2.9,1,.2,2.2-.3,3-1.7l41.1-78.8c45.9-87.9,93.5-174.2,144.8-259,13-21.5,25.7-42.4,41.8-62.8-8.7,32.9-17.1,63.1-23.5,95.4-10.6,52.9-20.2,105.2-28,158.5-2.9,19.9-3.9,38.5-2.6,58.2,1.8,27.8,8.9,54.6,21,78.9-5.4-3.9-12.1-6.6-20.2-7.6-32.1-4.2-51.1,24.8-56.8,52.5-3.7,16.7-3.7,33.6-2,50.5.7,7.3,1.4,15,2.4,22.8-18.6,8.3-37.7,15.9-56.4,24.3-4.2,1.9-8.4,3.9-12.5,5.9-28.2,11.5-54.6,24.2-77.2,45-19.7,18.2-34.6,40.7-43.8,65.5-24,64.1-5.4,135.1,46.6,179.2,16,13.5,33,24.4,52.3,33.4,50.4,23.4,106.2,31.1,161.5,24.1,59.6-7.5,116.1-28.9,164.7-64,43.4-31.3,76.7-76.1,89.2-128.4,8.6-36.1,6.1-73.5-8.8-107.3-10.2-23.2-24.9-42.5-41.8-61ZM711.8,669c2.1-12.8,7.1-26.8,17.5-34.3,9.1-6.6,23.8-5.5,31.8,2.6,3.7,3.9,5.6,9.6,5.7,16.1-.3,26-22.2,51.6-42,67.1-3.3,2.4-6.7,4.5-10.3,6.5-.6-4.6-1.2-9.3-1.8-14-2-14.3-3.3-29.8-.9-43.9ZM639.2,769.7v-.3c-2.3.8-4.5,1.7-6.6,2.5,2.1-.9,4.3-1.8,6.5-2.7v.2c14.4-5.5,28.8-10.6,43.2-16,3.4-1.3,6.9-2.6,10.4-3.9,7,50.6,21.5,107.3,54.1,143.4-26.9,21.6-59.8,36.2-94.3,30.3-20.5-3.4-36-13.4-47.6-30.7-29.7-46-13.6-96.9,34.3-122.9ZM978.8,941.3c-8.7,36.2-28.3,66.7-54.4,92.4-45.7,45.1-122.8,64.4-122.8,64.4-35.8,9.5-72.9,12.4-110.1,8.6-50-5.1-100.7-26.3-135-63.3-29.1-31.3-44-71.9-41.9-115,2.2-43.3,20.6-84.7,51.8-114.9,9.9-9.6,20.6-17.5,32-24.3-2.2,2.1-4.3,4.2-6.3,6.6-33.1,37.6-23.4,100.6,17.5,128.6,23.3,16.3,55.9,18.3,82.7,10.9,23.1-6.5,43.5-19.6,60.9-35.9,27.9,25.4,62.2,24.7,93.7,5.7,7-4.1,13.5-8.8,19.7-13.9l-1.3-2c-13.7,7.2-28.1,13.5-43.2,16.1-24.4,4.4-42.5-4.2-56.1-18.9,4.3-4.8,8.3-9.7,12.1-14.8,7.3-10,14.2-20.4,19.2-31.7h0c3.9-7.6,6.5-16.2,6.4-25.3.1-15.1-9.7-29.5-25.6-31.3-12.9-1.5-25.9,9.1-26.7,22.1,0,1.6,0,3.2.5,4.8.1.8.4,1.7.9,2.6,1.1,2.1,2.8,3.4,4.6,3.6.1,0,.3,0,.5,0,1.1,0,2.7-.5,4.3-2.3,2.1-2.4,2.7-5.5,3.2-8.5.7-3.4,1.3-6.7,4.1-8.9.9-.7,2.1-1.3,3.4-1.7,3.2-.7,6.5-.9,9.7-.3,5.2,1.1,9.2,4.8,11.9,9.5,2.8,5,4.1,10.5,4.3,16.2,0,2-.3,3.8-.6,5.6-.5,3-1.3,5.9-2.4,8.8l.5.2s0,0,0,0c-.9,1.8-1.9,3.6-3,5.3-1.4,2.3-2.8,4.5-4.2,6.7-4.8,7.2-10.1,14.1-15.8,20.6-3.8,4.4-7.9,8.7-12.2,12.8-12-15.3-20.1-35.4-26.1-54.2-8.8-28-14.1-57.4-18.4-86.6,5.4-2.6,10.8-5.4,15.9-8.7,21.5-15.3,42.3-38,49.2-64.2,2-7.5,2.5-14.9,1.4-21.6,0-.2,0-.5-.1-.7,8.7,12.5,19.2,23.8,30.7,34.9.9.8,1.7,1.6,2.6,2.4,16.8,15.9,34.2,30,52,45,35.4,29.8,74.8,64.3,96.6,105.6,17.8,33.6,23.3,71,14.3,108.7Z"></path>
+    <path d="M815.9,682c-1.7-1.4-3.3-2.9-4.9-4.3-10.7-9.8-20.1-20.7-28.2-32.3,0-.2,0-.5-.1-.7,8.7,12.5,19.2,23.8,30.7,34.9.9.8,1.7,1.6,2.6,2.4Z"></path>
+    <path d="M639,769.2c-2.2.9-4.3,1.8-6.5,2.7,2.2-.9,4.3-1.7,6.5-2.5v-.2Z"></path>
+    <path d="M639.1,769.4c-2.2.8-4.3,1.7-6.5,2.5,2.1-.9,4.3-1.8,6.5-2.7v.2Z"></path>
+    <path d="M796,835.2c-.9,1.8-1.9,3.6-3,5.3.9-1.7,1.8-3.5,2.5-5.5l.5.2Z"></path>
+  </symbol>
+</svg>
+
+<!-- ===================== LOCK SCREEN ===================== -->
+<div class="lock-screen" id="lockScreen">
+  <div class="lock-box">
+    <svg class="lock-monogram" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="64" cy="64" r="62" stroke="#a9884f" stroke-width="1"></circle>
+      <use href="#monogramMark" x="22" y="22" width="84" height="84" fill="#2b3b2f"></use>
+    </svg>
+    <p class="lock-eyebrow">Madeleine &amp; Sahil</p>
+    <p class="lock-label">Skriv inn passordet fra invitasjonen</p>
+    <form class="lock-form" id="lockForm">
+      <input type="password" id="lockPassword" placeholder="Passord" autocomplete="off" autocapitalize="off">
+      <button type="submit">Lås opp</button>
+    </form>
+    <p class="lock-error" id="lockError"></p>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <svg class="hero-fern left" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M50 300 C 48 220, 52 140, 50 20" stroke="#2b3b2f" stroke-width="1.2"></path>
+    <g stroke="#2b3b2f" stroke-width="1">
+      <path d="M50 260 C 30 250, 15 235, 8 215" fill="none"></path>
+      <path d="M50 220 C 30 210, 15 195, 8 175" fill="none"></path>
+      <path d="M50 180 C 30 170, 15 155, 8 135" fill="none"></path>
+      <path d="M50 140 C 30 130, 15 115, 8 95" fill="none"></path>
+      <path d="M50 260 C 70 250, 85 235, 92 215" fill="none"></path>
+      <path d="M50 220 C 70 210, 85 195, 92 175" fill="none"></path>
+      <path d="M50 180 C 70 170, 85 155, 92 135" fill="none"></path>
+      <path d="M50 140 C 70 130, 85 115, 92 95" fill="none"></path>
+    </g>
+  </svg>
+  <svg class="hero-fern right" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M50 300 C 48 220, 52 140, 50 20" stroke="#2b3b2f" stroke-width="1.2"></path>
+    <g stroke="#2b3b2f" stroke-width="1">
+      <path d="M50 260 C 30 250, 15 235, 8 215" fill="none"></path>
+      <path d="M50 220 C 30 210, 15 195, 8 175" fill="none"></path>
+      <path d="M50 180 C 30 170, 15 155, 8 135" fill="none"></path>
+      <path d="M50 140 C 30 130, 15 115, 8 95" fill="none"></path>
+      <path d="M50 260 C 70 250, 85 235, 92 215" fill="none"></path>
+      <path d="M50 220 C 70 210, 85 195, 92 175" fill="none"></path>
+      <path d="M50 180 C 70 170, 85 155, 92 135" fill="none"></path>
+      <path d="M50 140 C 70 130, 85 115, 92 95" fill="none"></path>
+    </g>
+  </svg>
+
+  <svg class="monogram" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="64" cy="64" r="62" stroke="#a9884f" stroke-width="1"></circle>
+    <use href="#monogramMark" x="22" y="22" width="84" height="84" fill="#2b3b2f"></use>
+  </svg>
+
+  <span class="eyebrow">Vi skal gifte oss</span>
+  <h1>Madeleine<span class="amp">&amp;</span>Sahil</h1>
+  <p class="hero-date">29. mai 2027 · Oslo &amp; Sætre</p>
+  <div class="hero-divider"></div>
+</section>
+
+<!-- ===================== OUR STORY ===================== -->
+<section class="section story reveal in-view">
+  <span class="eyebrow">Vår historie</span>
+  <h2>Lorem ipsum dolor sit amet</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+  <p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <svg class="story-mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12 21a1 1 0 0 1-.71-.29l-7.77-7.78a5.26 5.26 0 0 1 0-7.4 5.24 5.24 0 0 1 7.4 0L12 6.61l1.08-1.08a5.24 5.24 0 0 1 7.4 0 5.26 5.26 0 0 1 0 7.4l-7.77 7.78A1 1 0 0 1 12 21z" stroke="#a9884f" stroke-width="1"></path>
+  </svg>
+</section>
+
+<!-- ===================== DETAILS ===================== -->
+<section class="details reveal in-view" id="detaljer">
+  <div class="details-inner">
+    <span class="eyebrow">Dagens program</span>
+    <h2>Praktiske detaljer</h2>
+    <div class="venue-grid">
+      <div class="venue">
+        <svg class="venue-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 5 V35 M11 14 H29" stroke="#cfb37e" stroke-width="1.4" stroke-linecap="round"></path>
+        </svg>
+        <span class="time">Kl. 14:00</span>
+        <h3>Vielsen</h3>
+        <p class="place">Østre Aker kirke</p>
+        <p class="addr">Ulvenveien 110, 0665 Oslo</p>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%98stre+Aker+kirke%2C+Ulvenveien+110%2C+0665+Oslo" target="_blank" rel="noopener">Åpne i kart</a>
+      </div>
+      <div class="venue">
+        <svg class="venue-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 34 V18 L20 8 L34 18 V34 Z" stroke="#cfb37e" stroke-width="1.3"></path>
+          <path d="M16 34 V24 H24 V34" stroke="#cfb37e" stroke-width="1"></path>
+        </svg>
+        <span class="time">Kl. 17:00</span>
+        <h3>Middag &amp; fest</h3>
+        <p class="place">Grønsand Gjestegård</p>
+        <p class="addr">Grønsandveien 9, 3475 Sætre</p>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Gr%C3%B8nsand+Gjestegaard%2C+Gr%C3%B8nsandveien+9%2C+3475+S%C3%A6tre" target="_blank" rel="noopener">Åpne i kart</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRACTICAL / TRANSPORT ===================== -->
+<section class="section practical reveal in-view">
+  <span class="eyebrow">Transport</span>
+  <h2>Kom deg trygt frem</h2>
+  <div class="practical-card">
+    <svg class="practical-icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4 19 L6 11 H24 L26 19 M4 19 H26 M4 19 V23 M26 19 V23" stroke="#a9884f" stroke-width="1.3"></path>
+      <circle cx="9" cy="23" r="1.6" stroke="#a9884f" stroke-width="1.2"></circle>
+      <circle cx="21" cy="23" r="1.6" stroke="#a9884f" stroke-width="1.2"></circle>
+    </svg>
+    <p>
+      Det blir en kjøretur mellom kirken i Oslo og festlokalet i Sætre. Vi setter stor
+      pris på om de av dere som avstår fra alkohol kan tilby skyss til andre gjester.
+    </p>
+    <p>
+      Vi vil også sette opp en buss som delvis finansieres av oss — gi oss beskjed i
+      RSVP-skjemaet under om dette er noe dere ønsker å benytte.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== RSVP ===================== -->
+<section class="section rsvp reveal in-view" id="rsvp">
+  <div id="rsvpHeader">
+    <span class="eyebrow">Vennligst svar</span>
+    <h2>RSVP</h2>
+    <p class="rsvp-sub">Vi håper å se dere! Svar innen <strong>31. mars 2027</strong>.</p>
+  </div>
+
+  <form class="rsvp-form" id="rsvpForm">
+    <div class="field">
+      <label for="navn">Navn</label>
+      <input type="text" id="navn" name="Navn" placeholder="Fullt navn (og eventuelt følge)" required="">
+    </div>
+
+    <div class="field">
+      <label>Deltar dere?</label>
+      <div class="radio-row" role="radiogroup" aria-label="Deltar dere?">
+        <label class="radio-pill">
+          <input type="radio" name="Deltar" value="Ja" required id="deltarJa">
+          <span id="jaLabel">Ja, vi kommer</span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="Deltar" value="Nei">
+          <span>Nei, dessverre</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="field" id="antallGroup">
+      <label>Antall gjester</label>
+      <div class="radio-row" role="radiogroup" aria-label="Antall gjester">
+        <label class="radio-pill">
+          <input type="radio" name="AntallValg" value="1" id="antallAlene">
+          <span>Kommer alene</span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="AntallValg" value="2" id="antallTo">
+          <span>Vi kommer som to</span>
+        </label>
+      </div>
+      <input type="hidden" id="antall" name="AntallGjester" value="">
+    </div>
+
+    <div class="field" id="allergierGroup">
+      <label for="allergier">Allergier eller diettbehov</label>
+      <textarea id="allergier" name="Allergier" placeholder="Valgfritt — skriv 'Ingen' hvis du ikke har noen allergier eller diettbehov"></textarea>
+    </div>
+
+    <div class="field" id="bussGroup">
+      <label>Trenger dere buss mellom kirken og festlokalet?</label>
+      <div class="radio-row" role="radiogroup" aria-label="Trenger dere buss?">
+        <label class="radio-pill">
+          <input type="radio" name="TrengerBuss" value="Ja">
+          <span>Ja, gjerne</span>
+        </label>
+        <label class="radio-pill">
+          <input type="radio" name="TrengerBuss" value="Nei">
+          <span>Nei, ordner egen skyss</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="field" id="sangGroup">
+      <label for="sang">Sangønske</label>
+      <input type="text" id="sang" name="Sangonske" placeholder="En sang som må spilles på festen">
+    </div>
+
+    <div class="submit-row">
+      <button type="submit" class="submit-btn" id="submitBtn">Send svar</button>
+      <p class="form-msg" id="formMsg"></p>
+    </div>
+  </form>
+
+  <div class="rsvp-thankyou" id="rsvpThankyou">
+    <svg class="thankyou-mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 21a1 1 0 0 1-.71-.29l-7.77-7.78a5.26 5.26 0 0 1 0-7.4 5.24 5.24 0 0 1 7.4 0L12 6.61l1.08-1.08a5.24 5.24 0 0 1 7.4 0 5.26 5.26 0 0 1 0 7.4l-7.77 7.78A1 1 0 0 1 12 21z" stroke="#a9884f" stroke-width="1"></path>
+    </svg>
+    <h3 id="thankyouHeading">Takk for svaret ditt!</h3>
+    <p id="thankyouText">Vi gleder oss til å feire denne dagen med dere.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="reveal in-view">
+  <svg class="monogram-small" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="64" cy="64" r="62" stroke="#a9884f" stroke-width="1"></circle>
+    <use href="#monogramMark" x="22" y="22" width="84" height="84" fill="#2b3b2f"></use>
+  </svg>
+  <p>Vi gleder oss til å feire med dere</p>
+</footer>
+
+<script>
+  // ---------- Password gate ----------
+  // To guests with a plus-one, share the "sammen2027" password.
+  // To solo guests, share the "gjest2027" password instead.
+  const PASSWORDS = {
+    'sammen2027': 'plusOne',
+    'gjest2027': 'solo'
+  };
+  const MODE_KEY = 'msWeddingMode';
+  const SUBMITTED_KEY = 'msWeddingSubmitted';
+  const SUBMITTED_TYPE_KEY = 'msWeddingSubmittedType'; // 'attending' or 'declined'
+
+  // Safe localStorage wrappers — fail quietly if storage is blocked (rare, some locked-down private modes)
+  function storageGet(key) {
+    try { return localStorage.getItem(key); } catch (err) { return null; }
+  }
+  function storageSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (err) { /* ignore */ }
+  }
+
+  const lockScreen = document.getElementById('lockScreen');
+  const lockForm = document.getElementById('lockForm');
+  const lockInput = document.getElementById('lockPassword');
+  const lockError = document.getElementById('lockError');
+
+  const form = document.getElementById('rsvpForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMsg = document.getElementById('formMsg');
+  const thankyou = document.getElementById('rsvpThankyou');
+  const thankyouHeading = document.getElementById('thankyouHeading');
+  const thankyouText = document.getElementById('thankyouText');
+  const rsvpHeader = document.getElementById('rsvpHeader');
+
+  let currentMode = null;
+
+  function showThankyou(type) {
+    form.style.display = 'none';
+    rsvpHeader.style.display = 'none';
+    if (type === 'declined') {
+      thankyouHeading.textContent = 'Tusen takk for svaret';
+      thankyouText.textContent = 'Så synd at dere ikke kan være med denne gangen — vi håper å se dere ved en annen anledning.';
+    } else {
+      thankyouHeading.textContent = 'Takk for svaret ditt!';
+      thankyouText.textContent = 'Vi gleder oss til å feire denne dagen med dere.';
+    }
+    thankyou.classList.add('visible');
+  }
+
+  function applyMode(mode) {
+    const navnInput = document.getElementById('navn');
+    const jaLabel = document.getElementById('jaLabel');
+    const antallGroup = document.getElementById('antallGroup');
+    const antallInput = document.getElementById('antall');
+
+    if (mode === 'solo') {
+      navnInput.placeholder = 'Fullt navn';
+      jaLabel.textContent = 'Ja, jeg kommer';
+      antallGroup.style.display = 'none';
+      antallInput.type = 'hidden';
+      antallInput.required = false;
+      document.querySelectorAll('input[name="AntallValg"]').forEach(function (r) { r.required = false; });
+    } else {
+      navnInput.placeholder = 'Fullt navn (og eventuelt følge)';
+      jaLabel.textContent = 'Ja, vi kommer';
+    }
+
+    updateDeltarVisibility();
+  }
+
+  function updateDeltarVisibility() {
+    const checked = document.querySelector('input[name="Deltar"]:checked');
+    const declined = !!checked && checked.value === 'Nei';
+
+    const antallGroup = document.getElementById('antallGroup');
+    const antallInput = document.getElementById('antall');
+    const antallValgInputs = document.querySelectorAll('input[name="AntallValg"]');
+    const allergierGroup = document.getElementById('allergierGroup');
+    const allergierInput = document.getElementById('allergier');
+    const bussGroup = document.getElementById('bussGroup');
+    const bussInputs = document.querySelectorAll('input[name="TrengerBuss"]');
+    const sangGroup = document.getElementById('sangGroup');
+
+    allergierGroup.style.display = declined ? 'none' : '';
+
+    bussGroup.style.display = declined ? 'none' : '';
+    bussInputs.forEach(function (r) { r.required = !declined; });
+
+    sangGroup.style.display = declined ? 'none' : '';
+
+    if (currentMode === 'solo') {
+      antallInput.value = declined ? '' : '1';
+    } else {
+      antallGroup.style.display = declined ? 'none' : '';
+      antallValgInputs.forEach(function (r) { r.required = !declined; });
+      const antallChecked = document.querySelector('input[name="AntallValg"]:checked');
+      antallInput.value = declined ? '' : (antallChecked ? antallChecked.value : '');
+    }
+  }
+
+  document.querySelectorAll('input[name="AntallValg"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      document.getElementById('antall').value = this.value;
+    });
+  });
+
+  document.querySelectorAll('input[name="Deltar"]').forEach(function (r) {
+    r.addEventListener('change', updateDeltarVisibility);
+  });
+
+  function unlock(mode) {
+    currentMode = mode;
+    storageSet(MODE_KEY, mode);
+    lockScreen.classList.add('unlocked');
+    document.body.style.overflow = '';
+    applyMode(mode);
+  }
+
+  lockForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const entered = lockInput.value.trim();
+    const mode = PASSWORDS[entered];
+    if (mode) {
+      lockError.textContent = '';
+      unlock(mode);
+    } else {
+      lockError.textContent = 'Feil passord — prøv igjen.';
+      lockInput.value = '';
+      lockInput.focus();
+    }
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ---------- RSVP form submission ----------
+  // Bytt ut denne URL-en med din egen Google Apps Script Web App-URL.
+  // Se README.md for fremgangsmåte (Google Sheets + Apps Script).
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzaT9JaQoIjKx3UU8ZzSX8Xlu1ChbXoCUMbtrbRAKge13GdE3euyL1Su0Fj1lpe8Osc9w/exec";
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    formMsg.textContent = '';
+    formMsg.classList.remove('error');
+
+    if (GOOGLE_SCRIPT_URL === "SETT_INN_APPS_SCRIPT_URL_HER") {
+      formMsg.textContent = 'Skjemaet er ikke koblet til enda — se README.md for oppsett.';
+      formMsg.classList.add('error');
+      return;
+    }
+
+    const deltarChecked = document.querySelector('input[name="Deltar"]:checked');
+    const submissionType = (deltarChecked && deltarChecked.value === 'Nei') ? 'declined' : 'attending';
+
+    const data = new FormData(form);
+    const payload = {};
+    data.forEach((value, key) => { payload[key] = value; });
+
+    if (!payload.Allergier || !payload.Allergier.trim()) {
+      payload.Allergier = 'Ingen';
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sender...';
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      storageSet(SUBMITTED_KEY, 'true');
+      storageSet(SUBMITTED_TYPE_KEY, submissionType);
+      showThankyou(submissionType);
+    })
+    .catch(() => {
+      formMsg.textContent = 'Noe gikk galt. Prøv igjen, eller send oss en melding direkte.';
+      formMsg.classList.add('error');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send svar';
+    });
+  });
+
+  // ---------- Restore state on reload ----------
+  const savedMode = storageGet(MODE_KEY);
+  if (savedMode === 'plusOne' || savedMode === 'solo') {
+    unlock(savedMode);
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (storageGet(SUBMITTED_KEY) === 'true') {
+    showThankyou(storageGet(SUBMITTED_TYPE_KEY) || 'attending');
+  }
+</script>
+
+
+
+</body></html>
